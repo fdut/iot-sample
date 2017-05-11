@@ -1,6 +1,3 @@
-      
-      
-      
       .platform-ios .manual-ios-statusbar-padding{
         padding-top:20px;
       }
@@ -23,8 +20,6 @@
         list-style-type: disc;
         padding-left:40px;
       }
-
-
       .show-list-numbers-and-dots ol{
         list-style-type: decimal;
         padding-left:40px;

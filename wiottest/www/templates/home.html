@@ -1,26 +1,31 @@
-<ion-view title="Home" id="page1">
-  <ion-nav-buttons side="left" class="has-header">
-    <button class="button button-icon icon ion-home"></button>
+<ion-view title={{Home.Title}} id="page1">
+
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-android-settings" ng-click="settings()"></button>
   </ion-nav-buttons>
   <ion-content padding="true" class="has-header">
     <form id="home-form1" class="list">
-      <label class="item item-input" id="home-textarea1" ng-model="infotxt">{{infotxt}}</label>
+      <label class="item item-input" id="home-textarea1" ng-if="!btnconnect" ng-model="infotxt">{{infotxt}}</label>
     </form>
-    <button id="home-btnconnect" class="button button-positive  button-block" ng-show="!showbtnconnect" ng-click="MQTTconnect()">Connect</button>
-    <button id="home-btnstart" class="button button-positive  button-block button-outline" ng-click="startFour()">Start</button>
-    <button id="home-btnporte" class="button button-positive  button-block button-outline">Door</button>
+    <button id="home-btnconnect" class="button button-positive  button-block" ng-show="btnconnect" ng-click="MQTTconnect()">Connect</button>
+    <button id="home-btnporte" class="button button-positive  button-block button-outline" ng-click="manageDoor()">{{btnDoor.label}}</button>
     <form id="home-form" class="list">
+      <ion-item class="range range-positive" id="home-tptarget">Température: 
+        <input type="range" value="1" min="0" max="250" step="1" ng-model="rangeValue" ng-change="drag(rangeValue)">
+        <div> {{rangeValue}}</div>
+      </ion-item>
       <label class="item item-input" id="home-tpreelle">
-        <span class="input-label">Température réelle</span>
-        <input type="number" placeholder="">
-      </label>
-      <label class="item item-input" id="home-tptarget">
-        <span class="input-label">Température cuisson</span>
-        <input type="number" placeholder="">
+        <span class="input-label">Température réelle (C)</span>
+        <input type="number" placeholder="000" value={{tprelle}}>
       </label>
       <label class="item item-input" id="home-tpsrestant">
-        <span class="input-label">Tps restant</span><textarea placeholder=""></textarea></label>
+        <span class="input-label">Temps estimé (min)</span>
+        <input type="number" placeholder="000" value={{tprestant}}>
+      </label>
+
     </form>
-    <button id="home-btnalarm" class="button button-positive  button-block">Alarme</button>
+    <button id="home-btnstart" class="button button-positive  button-block button-outline" ng-click="startFour()">{{btn1.label}}</button>
+    <!-- show only if countdown is running -->
+    <div ng-show="countDown>0">Your pizza is ready in {{countDown}} seconds.</div>
   </ion-content>
 </ion-view>
