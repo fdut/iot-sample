@@ -1,0 +1,26 @@
+<ion-view title="Home" id="page1">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-icon icon ion-home"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <form id="home-form1" class="list">
+      <label class="item item-input" id="home-textarea1" ng-model="infotxt">{{infotxt}}</label>
+    </form>
+    <button id="home-btnconnect" class="button button-positive  button-block" ng-show="!showbtnconnect" ng-click="MQTTconnect()">Connect</button>
+    <button id="home-btnstart" class="button button-positive  button-block button-outline" ng-click="startFour()">Start</button>
+    <button id="home-btnporte" class="button button-positive  button-block button-outline">Door</button>
+    <form id="home-form" class="list">
+      <label class="item item-input" id="home-tpreelle">
+        <span class="input-label">Température réelle</span>
+        <input type="number" placeholder="">
+      </label>
+      <label class="item item-input" id="home-tptarget">
+        <span class="input-label">Température cuisson</span>
+        <input type="number" placeholder="">
+      </label>
+      <label class="item item-input" id="home-tpsrestant">
+        <span class="input-label">Tps restant</span><textarea placeholder=""></textarea></label>
+    </form>
+    <button id="home-btnalarm" class="button button-positive  button-block">Alarme</button>
+  </ion-content>
+</ion-view>
