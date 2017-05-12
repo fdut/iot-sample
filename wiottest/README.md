@@ -1,4 +1,3 @@
-![](./resources/splash.png)
 
 # Introduction
 
