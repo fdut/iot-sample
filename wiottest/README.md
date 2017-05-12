@@ -1,4 +1,4 @@
-![](./images/apic_banner-mini.png)
+![](./resources/splash.png)
 
 # Introduction
 
