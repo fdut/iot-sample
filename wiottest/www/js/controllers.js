@@ -1,31 +1,20 @@
 angular.module('app.controllers', [])
 
 
-  /* Device Fred   
+  /* Device Simulated   */
 
   .constant('iotplatformConfig', {
     OrganizationID: "aubf5y",
     DeviceType: "OvenSimulator",
     DeviceID: "201705100001",
     AuthenticationMethod: "use-token-auth",
-    AuthenticationToken: "kEWeLLqjpbR@1yDSw5",
+    AuthenticationToken: "YOUR_TOKEN",
     //searchUrl with country name
     port: "443"
   })
 
- */
 
-  /* Device Yves   */
 
-    .constant('iotplatformConfig', {
-      OrganizationID: "9mjz2e",
-      DeviceType: "OvenSimulator",
-      DeviceID: "201705100001",
-      AuthenticationMethod: "use-token-auth",
-      AuthenticationToken: "kEWeLLqjpbR@1yDSw5",
-      //searchUrl with country name
-      port: "443"
-    })
 
 
   .controller('homeCtrl',
